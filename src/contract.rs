@@ -368,7 +368,7 @@ fn convert_cw20_to_bank(
         .addr_validate(&contract_addr)
         .context(format!("invalid contract address {}", contract_addr))?;
 
-    // convert contract address into base64
+    // convert contract address into base58
     let subdenom = contract_addr_to_base58(deps.as_ref(), contract_addr.clone())?;
     // format the token factory denom
     let tokenfactory_denom = "factory/".to_string()
